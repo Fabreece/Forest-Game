@@ -86,16 +86,18 @@ export default {
           question = this.questions['sword']
           if (question[this.command] !== undefined) {
             reply = this.texts[question[this.command]]
-            this.current_question = this.command === 'steal' ? question[this.command] : 'lady'
+            this.current_question = this.command === 'lady' ? question[this.command] : 'lady'
           } else {
             reply = ['I dont know waht this means. Try something else!']
           }
           break
         case 'lady':
+          console.log(question)
           question = this.questions['lady']
           if (question[this.command] !== undefined) {
             reply = this.texts[question[this.command]]
-            this.current_question = this.command === 'kill' ? question[this.command] : ''
+            console.log(question[this.command])
+            this.current_question = this.command === 'kill' ? question[this.command] : 'keep'
           } else {
             reply = ['I dont know waht this means. Try something else!']
           }
@@ -138,8 +140,6 @@ input[name='command'] {
   height: 28em;
   border: 2px solid grey;
   margin-top: 2em;
-  font-size: 12;
-
 }
  .logo {
    image-orientation: top;
